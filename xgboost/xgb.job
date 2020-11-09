@@ -1,0 +1,10 @@
+#!/bin/bash
+#BSUB -J xgb_D
+#BSUB -q bigmem
+#BSUB -n 1
+#BSUB -W 100:00
+#BSUB -e xgb_D.err
+#BSUB -o xgb_D.out
+module switch python/2.7.3 python/3.7.1
+$HOME/software/local/R-3.6.3/bin/Rscript xgb_nestedCV_LooCV_10foldCV.R D
+
