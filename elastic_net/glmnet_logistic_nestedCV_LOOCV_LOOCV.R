@@ -12,9 +12,6 @@ library(caret)
 HC_DWT_path<-"../../HC/HC_DWT/HC_"
 DR_DWT_path<-"../../DR/DR_DWT/DR_"
 
-
-
-
 library(glmnet)
 #### nested CV
 #### refer to the paper: Bias in Error Estimation When Using Cross-Validation for Model Selection
@@ -27,8 +24,7 @@ library(glmnet)
 Vname<-"bior1.1"
 vname<-Vname
 
-HC_Data<-list()
-DR_Data<-list()
+
 
 HC_DWT_engy_file_D<-paste0(HC_DWT_path,vname,"_D.csv")
 HC_DWT_engy_D<-read.csv(HC_DWT_engy_file_D,header = FALSE)
@@ -40,9 +36,6 @@ HC_DWT_engy_file_S<-paste0(HC_DWT_path,vname,"_S.csv")
 HC_DWT_engy_S<-read.csv(HC_DWT_engy_file_S,header = FALSE)
 dim(HC_DWT_engy_S)
 
-HC_Data[[1]]<-HC_DWT_engy_D
-HC_Data[[2]]<-HC_DWT_engy_R
-HC_Data[[3]]<-HC_DWT_engy_S
 
 DR_DWT_engy_file_D<-paste0(DR_DWT_path,vname,"_D.csv")
 DR_DWT_engy_D<-read.csv(DR_DWT_engy_file_D,header = FALSE)
@@ -54,9 +47,7 @@ DR_DWT_engy_file_S<-paste0(DR_DWT_path,vname,"_S.csv")
 DR_DWT_engy_S<-read.csv(DR_DWT_engy_file_S,header = FALSE)
 dim(DR_DWT_engy_S)
 
-DR_Data[[1]]<-DR_DWT_engy_D
-DR_Data[[2]]<-DR_DWT_engy_R
-DR_Data[[3]]<-DR_DWT_engy_S
+
 
 data_name<-args[1]
 data_name<-strsplit(data_name,"\\.")[[1]]
